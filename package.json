@@ -1,6 +1,6 @@
 {
   "name": "prpack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pack a pull request into a single markdown file optimized for LLM code review.",
   "bin": {
     "prpack": "./bin/prpack.js"
