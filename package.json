@@ -1,0 +1,38 @@
+{
+  "name": "prpack",
+  "version": "0.1.0",
+  "description": "Pack a pull request into a single markdown file optimized for LLM code review.",
+  "bin": {
+    "prpack": "./bin/prpack.js"
+  },
+  "main": "./src/pack.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "llm",
+    "ai",
+    "code-review",
+    "pull-request",
+    "context",
+    "claude",
+    "cursor",
+    "git",
+    "diff"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucas2944/prpack.git"
+  }
+}
