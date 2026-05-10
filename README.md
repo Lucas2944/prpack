@@ -2,6 +2,8 @@
 
 > Pack a pull request into one markdown file optimized for LLM code review.
 
+![prpack](./cover.png)
+
 `prpack` walks the diff between two refs and emits a single, well-structured markdown file containing the commit list, the diff, **and the full post-change contents of every touched file**. Drop it into Claude / Cursor / any model and ask for review — no copy-pasting, no missing context, no per-file back-and-forth.
 
 ```sh
