@@ -134,3 +134,11 @@ Diffs alone don't cut it. Full file content is the cheapest, highest-leverage th
 prpack is one tool that does this. You don't need prpack. You can write the equivalent in fifty lines of bash. The point is just: stop pasting raw diffs.
 
 If you try it and it breaks on your repo, or you have ideas for flags I should add, open an issue or PR on the repo. I read everything.
+
+## Three ways to use it
+
+- **CLI**, in your terminal: `npx github:Lucas2944/prpack --out ctx.md` ([repo](https://github.com/Lucas2944/prpack))
+- **GitHub Action**, on every PR automatically: drop `uses: Lucas2944/prpack-action@v1` into a 5-line workflow ([repo](https://github.com/Lucas2944/prpack-action))
+- **Browser demo**, to try it on someone else's PR without installing anything: paste a URL at [lucas2944.github.io/prpack-demo](https://lucas2944.github.io/prpack-demo/)
+
+Same output format for all three — copy/paste-ready for whatever model you use.
