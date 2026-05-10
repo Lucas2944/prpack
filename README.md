@@ -26,9 +26,12 @@ Asking an LLM to review a PR is the obvious move, but the context it sees matter
 ## Install
 
 ```sh
-npm install -g prpack
-# or one-shot:
-npx prpack --out ctx.md
+# One-shot, no install:
+npx github:Lucas2944/prpack --out ctx.md
+
+# Or install globally:
+npm install -g github:Lucas2944/prpack
+prpack --out ctx.md
 ```
 
 Requires Node 18+ and `git` on PATH.
