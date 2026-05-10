@@ -11,6 +11,8 @@
 
 **Try it without installing:** paste a public GitHub PR URL into [lucas2944.github.io/prpack-demo](https://lucas2944.github.io/prpack-demo/) and watch the packed output appear in your browser. Pure client-side, no signup.
 
+**Looking for review prompts only?** [Lucas2944/prpack-prompts](https://github.com/Lucas2944/prpack-prompts) has four focused review prompts (security / performance / tests / architecture) as plain markdown files — append one to your context and you'll get structured reviews that catch real issues. Works with any LLM, with or without prpack.
+
 **Want this on every PR?** See [prpack-action](https://github.com/Lucas2944/prpack-action) — a GitHub Action wrapper. Drop a 5-line workflow in your repo and you get the packed markdown on every PR.
 
 `prpack` walks the diff between two refs and emits a single, well-structured markdown file containing the commit list, the diff, **and the full post-change contents of every touched file**. Drop it into Claude / Cursor / any model and ask for review — no copy-pasting, no missing context, no per-file back-and-forth.
