@@ -146,7 +146,7 @@ Every code block uses a fence longer than any backtick run inside it, so embedde
 
 ## Pro presets
 
-If you want curated `.prpack.yml` configs for specific review styles — security, performance, architecture, test-coverage — plus a one-page workflow guide, see **[prpack Pro Pack](https://gumroad.com/l/prpack)**. The CLI is and stays free; the pack is optional.
+If you want curated `.prpack.yml` configs for specific review styles — security, performance, architecture, test-coverage — plus a one-page workflow guide, see **[prpack Pro Pack](https://scottthurman89.itch.io/prpack)** (free or pay-what-you-want). The CLI is and stays free; the pack is optional.
 
 ## License
 
