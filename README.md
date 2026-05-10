@@ -3,12 +3,15 @@
 [![release](https://img.shields.io/github/v/release/Lucas2944/prpack)](https://github.com/Lucas2944/prpack/releases/latest)
 [![license](https://img.shields.io/github/license/Lucas2944/prpack)](./LICENSE)
 [![GitHub Action](https://img.shields.io/badge/GitHub%20Action-prpack--action-purple?logo=github)](https://github.com/Lucas2944/prpack-action)
+[![demo](https://img.shields.io/badge/try%20in%20browser-lucas2944.github.io%2Fprpack--demo-d2a8ff)](https://lucas2944.github.io/prpack-demo/)
 
 > Pack a pull request into one markdown file optimized for LLM code review.
 
 ![prpack](./cover.png)
 
-> **New:** want this to run on every PR automatically? See [prpack-action](https://github.com/Lucas2944/prpack-action) — a GitHub Action wrapper. Drop a 5-line workflow in your repo and you get the packed markdown on every PR.
+**Try it without installing:** paste a public GitHub PR URL into [lucas2944.github.io/prpack-demo](https://lucas2944.github.io/prpack-demo/) and watch the packed output appear in your browser. Pure client-side, no signup.
+
+**Want this on every PR?** See [prpack-action](https://github.com/Lucas2944/prpack-action) — a GitHub Action wrapper. Drop a 5-line workflow in your repo and you get the packed markdown on every PR.
 
 `prpack` walks the diff between two refs and emits a single, well-structured markdown file containing the commit list, the diff, **and the full post-change contents of every touched file**. Drop it into Claude / Cursor / any model and ask for review — no copy-pasting, no missing context, no per-file back-and-forth.
 
