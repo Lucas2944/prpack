@@ -21,6 +21,8 @@ That's it.
 
 ## Why
 
+> The technique behind prpack is written up at length in [THE_TECHNIQUE.md](./THE_TECHNIQUE.md) — a story of how a missed null-deref taught me that LLM code review is a context-engineering problem, not a model problem.
+
 Asking an LLM to review a PR is the obvious move, but the context it sees matters more than the prompt. Just pasting a diff drops crucial context — the model can't see what the rest of the function looks like, how callers use the changed code, or what the surrounding module exports. Pasting the whole repo wastes tokens and dilutes attention.
 
 `prpack` packs **exactly the diff plus the full state of every file the diff touches**. That's enough context to reason about the change without drowning the model in noise. If you want adjacent test files included automatically, pass `--include-tests`.
