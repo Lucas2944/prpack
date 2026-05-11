@@ -67,8 +67,31 @@ Options:
   --no-content          Only include the diff, not full file contents
   --max-bytes <n>       Skip files larger than n bytes (default: 200000)
   --exclude <glob>      Exclude paths matching glob (repeatable)
+  --review [angle]      Call Anthropic for a streamed review (default: general)
+  --api-key <key>       Anthropic API key (overrides ANTHROPIC_API_KEY)
+  --model <id>          Anthropic model for --review
+  --yes                 Skip cost-estimate confirmation in TTY review mode
   --quiet               Suppress stderr progress logs
 ```
+
+### Review mode
+
+One-line install plus review:
+
+```sh
+npx github:Lucas2944/prpack --review security --api-key "$ANTHROPIC_API_KEY"
+```
+
+`--review` packs the PR context, appends a focused review prompt, calls Anthropic's Messages API, and streams the response to your terminal. If you also pass `--out ctx.md`, prpack writes the packed context to `ctx.md` and the model's review to `ctx.md.review.md`.
+
+Focused angles:
+
+- `security`
+- `performance`
+- `tests`
+- `architecture`
+
+The default `general` angle gives a balanced pass across all four.
 
 ### Common recipes
 
@@ -96,6 +119,9 @@ prpack | pbcopy
 
 # Use a review preset (see prpack-pro)
 prpack --config security.prpack.yml --out audit.md
+
+# Stream a native AI review with the default general angle
+prpack --review --yes
 ```
 
 ### `.prpack.yml` configs
@@ -161,10 +187,10 @@ Every code block uses a fence longer than any backtick run inside it, so embedde
 
 ## What it doesn't do
 
-- **No network calls.** Everything is local `git`.
-- **No AI built in.** `prpack` produces context; you bring the model.
+- **No network calls in pack mode.** `prpack` only calls Anthropic when you explicitly pass `--review`.
+- **No hidden AI.** Review mode uses your Anthropic API key and prints the cost estimate before the call.
 - **No web UI.** It's a single CLI binary.
-- **No telemetry.** `prpack` never opens a socket.
+- **No telemetry.** Pack mode never opens a socket; review mode only opens the Anthropic request you explicitly asked for.
 
 ## Pro presets
 

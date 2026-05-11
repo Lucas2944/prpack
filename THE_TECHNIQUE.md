@@ -159,3 +159,9 @@ If you try it and it breaks on your repo, or you have ideas for flags I should a
 - **Browser demo**, to try it on someone else's PR without installing anything: paste a URL at [lucas2944.github.io/prpack-demo](https://lucas2944.github.io/prpack-demo/)
 
 Same output format for all three — copy/paste-ready for whatever model you use.
+
+## Update: native review mode
+
+v0.2.0 adds `prpack --review`, which keeps the original pack-first workflow but can now send the packed context directly to Anthropic's Messages API and stream the review back in the terminal. The four focused angles from `prpack-prompts` are built in: security, performance, tests, and architecture. There is also a general review mode for a balanced pass.
+
+This does not replace the human-in-the-loop workflow. It just removes the copy/paste step when you already know you want Claude to review the packed context. prpack still prints the cost estimate before the call, and `--out ctx.md` still gives you the artifact to inspect or reuse.
