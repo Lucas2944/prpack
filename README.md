@@ -4,6 +4,7 @@
 [![license](https://img.shields.io/github/license/Lucas2944/prpack)](./LICENSE)
 [![GitHub Action](https://img.shields.io/badge/GitHub%20Action-prpack--action-purple?logo=github)](https://github.com/Lucas2944/prpack-action)
 [![demo](https://img.shields.io/badge/try%20in%20browser-lucas2944.github.io%2Fprpack--demo-d2a8ff)](https://lucas2944.github.io/prpack-demo/)
+[![ko-fi](https://img.shields.io/badge/support-ko--fi-FF5E5B?logo=kofi&logoColor=white)](https://ko-fi.com/prpack)
 
 > Pack a pull request into one markdown file optimized for LLM code review.
 
