@@ -32,7 +32,7 @@ That's it.
 
 ## Why
 
-> The technique behind prpack is written up at length in [THE_TECHNIQUE.md](./THE_TECHNIQUE.md) — a story of how a missed null-deref taught me that LLM code review is a context-engineering problem, not a model problem.
+> The technique behind prpack is written up at length in [THE_TECHNIQUE.md](./THE_TECHNIQUE.md) — a story of how a missed null-deref taught me that LLM code review is a context-engineering problem, not a model problem. For a reproducible side-by-side, see [examples/](./examples/).
 
 Asking an LLM to review a PR is the obvious move, but the context it sees matters more than the prompt. Just pasting a diff drops crucial context — the model can't see what the rest of the function looks like, how callers use the changed code, or what the surrounding module exports. Pasting the whole repo wastes tokens and dilutes attention.
 
