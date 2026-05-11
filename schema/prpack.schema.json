@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Lucas2944/prpack/main/schema/prpack.schema.json",
+  "title": "prpack config",
+  "description": "Configuration file for prpack — pack a pull request into one markdown file for LLM code review.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "base": {
+      "type": "string",
+      "description": "Base ref to diff against. Defaults to origin/main, falls back to main.",
+      "examples": ["origin/main", "develop", "HEAD~3"]
+    },
+    "head": {
+      "type": "string",
+      "description": "Head ref. Defaults to HEAD.",
+      "examples": ["HEAD", "feature/new-thing"]
+    },
+    "out": {
+      "type": "string",
+      "description": "Output file path. If omitted, writes to stdout."
+    },
+    "includeTests": {
+      "type": "boolean",
+      "description": "Include adjacent test files even if they didn't change.",
+      "default": false
+    },
+    "includeUntracked": {
+      "type": "boolean",
+      "description": "Include untracked files in the diff.",
+      "default": false
+    },
+    "noContent": {
+      "type": "boolean",
+      "description": "Skip full file contents — only include the diff. Useful for very large PRs.",
+      "default": false
+    },
+    "maxBytes": {
+      "type": "integer",
+      "description": "Skip files larger than this many bytes.",
+      "default": 200000,
+      "minimum": 0
+    },
+    "exclude": {
+      "type": "array",
+      "description": "Glob patterns to exclude. Repeatable.",
+      "items": { "type": "string" },
+      "examples": [["dist/**", "*.lock", "pnpm-lock.yaml"]]
+    },
+    "preface": {
+      "type": "string",
+      "description": "Reviewer note from the author. Inserted near the top of the output under \"Reviewer note from author\"."
+    },
+    "reviewPrompt": {
+      "type": "string",
+      "description": "Review prompt appended to the end of the output, ready for the model to act on."
+    }
+  }
+}

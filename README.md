@@ -117,6 +117,14 @@ reviewPrompt: |
 
 `preface` is added under "Reviewer note from author" near the top. `reviewPrompt` is appended at the end, ready for the model to act on.
 
+For editor autocomplete and validation, add a `# yaml-language-server` line at the top of your config:
+
+```yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Lucas2944/prpack/main/schema/prpack.schema.json
+base: develop
+includeTests: true
+```
+
 ## Output shape
 
 ```
@@ -160,6 +168,10 @@ Every code block uses a fence longer than any backtick run inside it, so embedde
 ## Pro presets
 
 If you want curated `.prpack.yml` configs for specific review styles — security, performance, architecture, test-coverage — plus a one-page workflow guide, see **[prpack Pro Pack](https://scottthurman89.itch.io/prpack)** (free or pay-what-you-want). The CLI is and stays free; the pack is optional.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Good first issues are listed at the bottom — comment before you start so we don't duplicate work.
 
 ## License
 

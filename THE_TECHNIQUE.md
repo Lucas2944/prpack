@@ -43,6 +43,23 @@ For every file the PR touches, give the model:
 
 That's it. That single addition — full file content — is what turns useless reviews into reviews that catch real bugs. I have run this experiment maybe forty times now on my own PRs. The hit rate on substantive feedback goes from roughly one in five to roughly four in five.
 
+Visually:
+
+```mermaid
+flowchart LR
+    A[git PR<br/>base..head] --> B[prpack]
+    B --> C[commit list]
+    B --> D[per-file diff]
+    B --> E[per-file<br/>full content]
+    C & D & E --> F[ctx.md<br/>single file]
+    F --> G[paste into<br/>Claude / Cursor]
+    G --> H[review that<br/>catches bugs]
+    style E fill:#d2a8ff,stroke:#8957e5,color:#000
+    style H fill:#56d364,stroke:#238636,color:#000
+```
+
+The purple step — full content — is the one that flips the outcome.
+
 The annoying part is assembling it. You have to `git diff base..head --name-only`, loop through each file, `cat` it, slap on the diff, format the whole thing so the model doesn't choke on nested code fences. I did this by hand twice and then wrote a script. The script grew. I cleaned it up and put it on GitHub.
 
 ## prpack
